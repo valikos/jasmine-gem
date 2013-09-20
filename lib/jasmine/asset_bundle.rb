@@ -54,7 +54,7 @@ module Jasmine
               when "text/css"
                 path_to_stylesheet(processed_asset.logical_path)
               when "application/javascript"
-                path_to_javascript(processed_asset.logical_path)
+                path_to_javascript(processed_asset.logical_path, 'data-cover')
               end
             end
           end
