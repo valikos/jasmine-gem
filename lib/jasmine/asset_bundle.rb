@@ -1,3 +1,6 @@
+require 'pry'
+require 'pry-debugger'
+
 module Jasmine
 
   class AssetBundle
@@ -48,6 +51,7 @@ module Jasmine
         return @context if @context
         @context = ActionView::Base.new
         @context.instance_eval do
+          binding.pry
           def get_original_assets(pathname)
             assets_environment.find_asset(pathname).to_a.map do |processed_asset|
               case processed_asset.content_type
